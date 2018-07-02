@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: install commons
+    - apt: 
+    name={{item}} state=latest update_cache=yes
+  with_items:
+    - git
+    - vim
+    - build-essentials
+    - mosh
+    - tmux
+    - htop
+    - x-window-system
+
